@@ -1,0 +1,253 @@
+.admin-container {
+    padding: 30px 40px;
+    position: relative;
+}
+
+.admin-header {
+    margin-bottom: 30px;
+}
+.admin-header h1 {
+    color: #b08acb;
+    margin: 0 0 5px;
+    font-size: 26px;
+}
+.admin-header p {
+    color: #999;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Layout 2 colonnes */
+.admin-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+.admin-col {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+.admin-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.admin-section-header h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Boutons */
+.btn-add {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
+    background: #b08acb;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.2s;
+}
+.btn-add:hover { background: #9a73b5; }
+
+.btn-confirm {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: #b08acb;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 5px;
+}
+.btn-confirm:hover { background: #9a73b5; }
+
+.btn-icon-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0.5;
+    transition: 0.2s;
+    padding: 4px;
+}
+.btn-icon-delete:hover { opacity: 1; }
+
+/* Formulaire */
+.admin-form {
+    background: #f9f5ff;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.admin-form input {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 2px solid #EEECF4;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+.admin-form input:focus { border-color: #b08acb; }
+
+.card-preview-img {
+    width: 80px;
+    border-radius: 8px;
+    align-self: flex-start;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Rareté */
+.rarity-select label {
+    font-size: 12px;
+    color: #BA8CBA;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 6px;
+}
+.rarity-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.rarity-btn {
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 2px solid #EEECF4;
+    background: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    color: #666;
+}
+.rarity-btn:hover { border-color: #b08acb; color: #b08acb; }
+.rarity-active { background: #b08acb !important; border-color: #b08acb !important; color: white !important; }
+
+/* Liste extensions */
+.ext-list { display: flex; flex-direction: column; gap: 8px; }
+
+.ext-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 2px solid #EEECF4;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.ext-item:hover { border-color: #b08acb; background: #f9f5ff; }
+.ext-item-active { border-color: #b08acb; background: #f9f5ff; }
+
+.ext-item-info { display: flex; flex-direction: column; gap: 2px; }
+.ext-item-name { font-weight: bold; color: #333; font-size: 14px; }
+.ext-item-count { font-size: 11px; color: #999; }
+
+.empty-msg { color: #bbb; font-size: 14px; text-align: center; padding: 20px 0; }
+
+.admin-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    color: #bbb;
+    font-size: 15px;
+}
+
+/* Grille cartes admin */
+.admin-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.admin-card {
+    background: #fafafa;
+    border-radius: 14px;
+    padding: 12px;
+    border: 2px solid #EEECF4;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: 0.2s;
+}
+.admin-card:hover { border-color: #b08acb; }
+
+.admin-card img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.admin-card-no-img {
+    width: 100%;
+    height: 100px;
+    background: #EEECF4;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #BA8CBA;
+}
+
+.admin-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.admin-card-name { font-size: 13px; font-weight: bold; color: #333; }
+.admin-card-rarity { font-size: 11px; font-weight: bold; }
+
+/* Couleurs raretés */
+.rarity-commune { color: #888; }
+.rarity-peu-commune { color: #2563eb; }
+.rarity-rare { color: #7c3aed; }
+.rarity-ultra-rare { color: #d97706; }
+.rarity-secrète { color: #dc2626; }
+
+.btn-card-delete {
+    padding: 6px;
+    border-radius: 8px;
+    border: none;
+    background: #fee2e2;
+    color: #ef4444;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-card-delete:hover { background: #ef4444; color: white; }
+
+/* Toast (même que dashboard) */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #3f3f6f;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    animation: slideIn 0.3s ease;
+}
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

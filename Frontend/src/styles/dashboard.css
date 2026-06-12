@@ -1,0 +1,299 @@
+*,*::before,*::after { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", sans-serif; background: #ECEFF1; }
+
+.market-container { padding: 20px 40px; position: relative; }
+
+/* TOAST */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #3f3f6f;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    animation: slideIn 0.3s ease;
+}
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* HEADER */
+.market-header { margin-bottom: 30px; }
+.filters { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+.search-input {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    background: #EEECF4;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 200px;
+    font-size: 14px;
+    outline: none;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    background: #EEECF4;
+    color: #BA8CBA;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.2s;
+}
+.filter-btn:hover, .filter-btn.active {
+    background: #b08acb;
+    color: white;
+}
+.sell-btn {
+    background: #b08acb !important;
+    color: white !important;
+}
+.sell-btn:hover { background: #9a73b5 !important; }
+
+/* FORMULAIRE VENTE */
+.sell-form-wrapper {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+.sell-form h2 {
+    color: #b08acb;
+    margin: 0 0 25px;
+    font-size: 20px;
+}
+.sell-field {
+    margin-bottom: 20px;
+}
+.sell-field label {
+    display: block;
+    color: #BA8CBA;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.sell-field input,
+.sell-field select {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 2px solid #EEECF4;
+    background: #fafafa;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: 0.2s;
+}
+.sell-field input:focus,
+.sell-field select:focus {
+    border-color: #b08acb;
+}
+.sell-field select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.sell-card-preview {
+    width: 80px;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.sell-row {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+.sell-mode-toggle {
+    display: flex;
+    gap: 10px;
+}
+.mode-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #EEECF4;
+    background: #fafafa;
+    color: #BA8CBA;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 14px;
+}
+.mode-btn.active {
+    background: #b08acb;
+    border-color: #b08acb;
+    color: white;
+}
+.sell-submit-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 25px;
+    border: none;
+    background: #b08acb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 10px;
+}
+.sell-submit-btn:hover { background: #9a73b5; }
+
+/* GRILLE */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+/* CARTE */
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 15px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transition: 0.25s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 24px rgba(0,0,0,0.13); }
+.card-auction { border: 2px solid #f59e0b22; }
+
+.card-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+.badge-immediate { background: #d1fae5; color: #059669; }
+.badge-auction { background: #fef3c7; color: #d97706; }
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    min-height: 150px;
+}
+.card-info { padding: 10px 0 5px; }
+.card-info h3 { margin: 0 0 4px; color: #333; font-size: 15px; }
+.card-extension { margin: 0; font-size: 12px; color: #999; }
+.card-rarity { margin: 2px 0 0; font-size: 11px; color: #b08acb; font-weight: bold; }
+.card-seller { margin: 4px 0 0; font-size: 12px; color: #aaa; }
+
+.card-price-block {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 10px 0;
+    border-top: 1px solid #f0f0f0;
+    margin-top: auto;
+}
+.card-price { font-size: 20px; font-weight: bold; color: #b08acb; }
+.card-price-label { font-size: 11px; color: #f59e0b; font-weight: bold; }
+.card-timer { font-size: 12px; color: #f59e0b; font-weight: bold; }
+.timer-expired { color: #ef4444; }
+
+.card-actions { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+
+.btn-buy, .btn-bid, .btn-delete {
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 13px;
+}
+.btn-buy { background: #EEECF4; color: #b08acb; }
+.btn-buy:hover { background: #b08acb; color: white; }
+.btn-bid { background: #fef3c7; color: #d97706; }
+.btn-bid:hover { background: #f59e0b; color: white; }
+.btn-delete { background: #fee2e2; color: #ef4444; }
+.btn-delete:hover { background: #ef4444; color: white; }
+
+/* MODAL */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    padding: 20px;
+}
+.modal {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 420px;
+    width: 100%;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #EEECF4;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #BA8CBA;
+}
+.modal-img {
+    width: 120px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 15px;
+}
+.modal h2 { text-align: center; color: #333; margin: 0 0 4px; }
+.modal-ext { text-align: center; color: #999; font-size: 13px; margin: 0 0 20px; }
+.modal-bids-info { background: #f9f5ff; border-radius: 12px; padding: 15px; margin-bottom: 15px; }
+.modal-bids-info p { margin: 4px 0; font-size: 14px; color: #555; }
+.modal-error { color: #ef4444; font-size: 13px; text-align: center; margin-bottom: 10px; }
+.modal-success { color: #059669; font-size: 13px; text-align: center; margin-bottom: 10px; }
+.modal-bid-row { display: flex; gap: 10px; }
+.modal-bid-row input {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 25px;
+    border: 2px solid #EEECF4;
+    outline: none;
+    font-size: 14px;
+}
+.modal-bid-row input:focus { border-color: #b08acb; }
+.modal-bid-history { margin-top: 20px; border-top: 1px solid #f0f0f0; padding-top: 15px; }
+.modal-bid-history h4 { color: #b08acb; margin: 0 0 10px; font-size: 13px; text-transform: uppercase; }
+.bid-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    background: #fafafa;
+    color: #555;
+}
+.bid-top { background: #fef3c7; color: #d97706; font-weight: bold; }
